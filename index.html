@@ -111,13 +111,13 @@
             <p>
             <ul class="substep">
                 <li>beginning or characteristical sequence of a music piece</li>
-                <li>multiple pieces with same title: incipit as identificator</li>
+                <li>multiple pieces with same title: incipit as identifier</li>
                 <li>used to catalogue music</li>
                 <li>IAML: first three measures or first ten notes</li>
             </ul>
             <ul class="substep">
                 <li>represents and identifies a music piece</li>
-                <li>first analytical hints on motives</li>
+                <li>first analytical hints on motifs</li>
             </ul>
             </p>
         </div>
@@ -155,20 +155,19 @@
             <h2>Searching Music</h2>
             <h3 class="red pull-up">Music Information Retrieval Systems</h3>
             <ul>
-                <li>search in in audio or in symbolic music notation</li>
-                <li>string based retrieval vs. extracting features</li>
+                <li>search in audio or in symbolic music notation</li>
             </ul>
             <p>
                 How to search?
             <ul>
                 <li>query by humming</li>
                 <li>acoustic fingerprinting</li>
-                <li>searching in notated music => digital musicology</li>
+                <li>searching in notated music (string based)</li>
             </ul>
             </p>
             <p>Why searching music?
             <ul>
-                <li>Identifying music</li>
+                <li>identifying music</li>
                 <li>recommender systems</li>
                 <li>grouping (style, mood, genre)</li>
                 <li>plagiarism detection</li>
@@ -190,9 +189,9 @@
             <h3 class="red pull-up">Search in notated music</h3>
             <div>
                 <ul>
-                    <li>Digital catalogue of Gluck's work</li>
-                    <li>Need for further searching possibilities</li>
-                    <li>Incipits to illustrate adaptions of motifs</li>
+                    <li>digital catalogue of Gluck's work</li>
+                    <li>incipits to illustrate adaptions of motifs</li>
+                    <li>further searching possibilities</li>
                 </ul>
             </div>
             <div class="row">
@@ -255,14 +254,13 @@
         </div>
 
         <div class="step">
-
-            <div class="eight columns">
-                <h2>Preliminary considerations</h2>
+            <h2>Preliminary considerations</h2>
+            <div>
                 <ul>
                     <li>What kind of music repositories can be integrated?</li>
                     <li>Which content is openly available?</li>
                     <li>What kind of annotations are used?</li>
-                    <li>Which overall standard to use in IncipitSearch?</li>
+                    <li>Which overall standard to use for IncipitSearch?</li>
                 </ul>
 
             </div>
@@ -293,7 +291,7 @@
                     </p>
                 </div>
 
-                <div class="six columns down-75">
+                <div class="six columns down-75 substep">
                     <div class="mfp-lightbox">
                         <a href="resources/img/pae-code.png">
                             <img src="resources/img/pae-code.png"/>
@@ -322,10 +320,10 @@
                     <p>Scans or analogue:</p>
                     <ul>
                         <li>digitized music pieces</li>
-                        <li>printed catalogue raisonees</li>
-                        <li>Verlagskataloge</li>
+                        <li>analogue only catalogues</li>
                     </ul>
                 </div>
+                <p class="substep">provide possibility to search over multiple catalogues</p>
 
                 <div class="four columns">
                     <div class="mfp-lightbox">
@@ -366,16 +364,18 @@
                 </div>
             </div>
             <p class="down-50">
-                Website:
+                (BETA) Website:
                 <a target="_blank" href="https://incipitsearch.adwmainz.net">https://incipitsearch.adwmainz.net</a>
             </p>
         </div>
 
         <div class="step">
             <h2>Software Architecture</h2>
+            <div class="mfp-lightbox">
             <a href="resources/img/incipitsearch-architecture.png">
                 <img src="resources/img/incipitsearch-architecture.png"/>
             </a>
+            </div>
         </div>
 
         <div class="step">
@@ -383,15 +383,15 @@
             <ul>
                 <li>preliminary thoughts and goals
                     <ul>
-                        <li>low-threshold possibility to notate Incipits for new content</li>
+                        <li>easy possibility to notate incipits for new content</li>
+                        <li>addition to existing Markup</li>
                         <li>applicable on different types of repositories</li>
-                        <li>addition to existing Markup or as standalone / first annotation</li>
                     </ul>
                 </li>
                 <li class="substep">RDF!
                     <ul>
-                        <li>interoperable through differenz serializations</li>
-                        <li>can be added to existing markup with JSON-LD, HTML Microdata and RDFa</li>
+                        <li>interoperable through different serializations</li>
+                        <li>can be added to existing markup with JSON-LD, HTML Microdata, RDFa</li>
                         <li>standalone notation (Turtle)</li>
                     </ul>
                 </li>
@@ -404,9 +404,9 @@
             <ul>
                 <li>joined initiative of search engine providers</li>
                 <li>simple vocabulary to implement semantic information on web pages
-                    for further processing by search engines
+                    for further processing by search engines (rich snippets)
                 </li>
-                <li>central: MusicComposition</li>
+                <li>MusicComposition</li>
                 <li>own extension of vocabulary "MusicIncipit"</li>
             </ul>
         </div>
@@ -420,9 +420,11 @@
         <div class="step">
             <h2>IncipitSearch metadata format</h2>
             <h3 class="red pull-up">Example Breitkopf Katalog</h3>
+            <div class="mfp-lightbox">
             <a href="resources/img/breitkopf-schema.png">
                 <img src="resources/img/breitkopf-schema.png"/>
             </a>
+            </div>
         </div>
 
         <div class="step">
@@ -434,11 +436,11 @@
 
         <div class="step">
             <h2>
-                Where are we going with IncipitSearch
+                Future directions
             </h2>
-            <h3 class="red pull-up">Plans and desiderata</h3>
+            <h3 class="red pull-up">Optimisation, new features, news repositories</h3>
             <ul>
-                <li>Optimisation of existing features, implementation of new functionality (exchange with community)
+                <li>Optimisation of existing features, implementation of new functionality (with community)
                     <ul>
                         <li>search interface</li>
                         <li>search possibilities (rythm)</li>
@@ -458,7 +460,7 @@
                     </ul>
                 </li>
                 <li class="substep">
-                    stimulus for digitization of work catalogues and creation of own metadata
+                    stimulus for digitization of work catalogues and openness for music repositories
                 </li>
             </ul>
         </div>
@@ -469,9 +471,8 @@
             </h2>
             <ul>
                 <li>connection between standalone repositories</li>
-                <li>intuitive music search</li>
                 <li>symplifying creation of additional metadata</li>
-                <li>promotion of LOD-Technologien in digital musicology</li>
+                <li>promotion of LOD technologies in digital musicology</li>
                 <li>adding fields of discourse to digital musicology</li>
             </ul>
         </div>
