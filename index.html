@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IncipitSearch - DH 2018 Budapest</title>
+
+    <!-- meta information -->
+    <meta name="author" content="Anna Neovesky, Frederic von Vlahovits" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- favicons -->
+    <link rel="shortcut icon" href="resources/img/favicon.png" />
+    <link rel="apple-touch-icon" href="resources/img/apple-touch-icon.png" />
+
+    <!-- CSS reset and grid -->
+    <link href="vendor/normalize/normalize-4.1.1.css" rel="stylesheet" />
+    <link href="vendor/skeleton/skeleton-2.0.4.css" rel="stylesheet" />
+
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,600italic,400italic,700italic,800,800italic&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+
+    <!-- styles for included libraries -->
+
+    <!-- chartist -->
+    <link rel="stylesheet" href="vendor/chartist/chartist.min-0.9.7.css" />
+
+    <!-- codemirror -->
+    <link rel="stylesheet" href="vendor/codemirror/lib/codemirror.css" />
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="vendor/highlight/styles/default.css" />
+    <link rel="stylesheet" href="resources/css/hljs.linenumbering.css" />
+
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup-1.1.0.css" />
+
+    <!-- standard presentation styles -->
+    <link href="resources/css/style.css" rel="stylesheet" />
+
+    <!-- custom presentation styles -->
+    <link href="resources/css/custom.css" rel="stylesheet" />
+
+    <!-- js needed in head -->
+
+    <!-- greuler -->
+    <script src="vendor/d3/d3-3.5.6.js"></script>
+    <script src="vendor/cola/cola.v3.min.js"></script>
+    <script src="vendor/greuler/greuler-0.5.5.min.js"></script>
+
+    <!-- html5 dataset shim for IE -->
+    <script src="vendor/impress/html5-dataset.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+    <div class="fallback-message">
+        <p>
+            Your browser <strong>doesn't support the features required</strong> by impress.mod.js,
+            so you are presented with a simplified version of this presentation.
+        </p>
+        <p>
+            For the best experience please use the latest <strong>Chrome</strong>, <strong>Safari</strong>
+            or <strong>Firefox</strong> browser.
+        </p>
+    </div>
+
+    <div id="impress">
+
+        <div class="step">
+            <h4><strong>29.5.2018</strong> | <a href="#">Eötvös Loránd Tudományegyetem</a></h4>
+            <h4><strong>DH 2018 Budapest</strong></h4>
+
+            <h1 class="down-100">IncipitSearch</h1>
+
+            <h2 class="red up-25">A common interface for searching in music repositories</h2>
+
+            <h4 class="down-100">
+                <strong>Slides:</strong>
+                <a href="https://digicademy.github.io/2018-DH-Budapest/" title="View the presentation online">
+                    https://digicademy.github.io/2018-DH-Budapest/
+                </a>
+            </h4>
+
+            <h5>
+                <strong>Anna Neovesky & Frederic von Vlahovits</strong> |
+
+                <img src="resources/img/Twitter_bird_logo_2012.svg" alt="Twitter" class="twitter-icon" />
+                <a href="https://twitter.com/digicademy" title="Digital Academy on Twitter">@digicademy</a> |
+                <img src="resources/img/Octicons-mark-github.svg" alt="Github" class="gh-icon" />
+                <a href="https://github.com/digicademy/incipitSearch" title="Digital Academy on GitHub">digicademy</a> |
+                <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>
+                <strong>Digital Academy</strong><br/>
+                <strong>Academy of Sciences and Literature | Mainz</strong>
+            </h5>
+        </div>
+
+
+        <div class="step">
+            <h2>What is an incipit?</h2>
+            <a href="http://imslp.org/wiki/Toccata_and_Fugue_in_D_minor%2C_BWV_565_(Bach%2C_Johann_Sebastian)">
+                <img src="resources/img/toccata.png" />
+            </a>
+            <audio controls>
+                <source src="resources/audio/toccata.mp3" type="audio/mp3">
+              Your browser does not support the audio element.
+            </audio>
+            <p class="small">Source: <a href="http://imslp.org/wiki/Toccata_and_Fugue_in_D_minor%2C_BWV_565_(Bach%2C_Johann_Sebastian)">Toccata and Fugue in D minor, BWV 565 (Bach, Johann Sebastian)</a> in <a href="http://imslp.org/">IMSLP</a></p>
+            <p>
+            <ul class="substep">
+                <li>beginning or characteristical sequence of a music piece</li>
+                <li>used to catalogue music</li>
+                <li>first three measures or first ten notes</li>
+                <li>represents and identifies  a music piece</li>
+                <li>first analytical hints on motives</li>
+            </ul>
+            </p>
+        </div>
+        
+             <div class="step">
+            <h2>Overview</h2>
+            <ul class="line-height-one-five">
+                <li>
+                    Approach and webtool to search music using music incipits
+                </li>
+                <li>
+                    Music Information Retrieval
+                </li>
+                <li>
+                    Idea of IncipitSearch
+                </li>
+                <li>
+                    Music Annotation and Open Content in Musicology
+                </li>
+                <li>
+                    Functionality and underlying technology
+                </li>
+                <li>Possibilities of usage of IncipitSearch</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h1 class="red">01</h1>
+            <h2 class="line-height-one-five">
+                Searching Music
+            </h2>
+        </div>
+        
+                <div class="step">
+            <h2>Searching Music</h2>
+            <h3 class="red pull-up">Music Information Retrieval Systems</h3>
+                    <ul>
+                        <li>different possibilities to implement search</li>
+                        <li>query by humming</li>
+                        <li>acoustic fingerprinting</li>
+                        <li>digital musicology: searching in notated music</li>
+                    </ul>
+            
+        </div>
+
+
+        <div class="step">
+            <h1 class="red">02</h1>
+            <h2 class="line-height-one-five">
+                Idea behind IncipitSearch
+            </h2>
+        </div>
+
+        <div class="step">
+            <div class="row">
+                <div class="eight columns">
+                    <h2>What is the idea of IncipitSearch?</h2>
+                    <h3 class="red pull-up">Search in notated music</h3>
+                    <ul>
+                        <li>Digital catalogue of Gluck's work</li>
+                        <li>Need for further searching possibilities</li>
+                        <li>Incipits to illustrate adoptions of motives</li>
+                    </ul>
+                </div>
+                <div class="four columns">
+                    <div class="mfp-lightbox">
+                        <a href="resources/img/gluck-complete-works.png">
+                            <img src="resources/img/gluck-complete-works.png" />
+                        </a>
+                    </div>
+                    <a href="http://www.gluck-gesamtausgabe.de/">
+                        <p class="x-small">Digital catalogue of Gluck's works</p>
+                    </a>
+                    <div class="mfp-lightbox">
+                        <a href="resources/img/screen-gluck.png">
+                            <img src="resources/img/screen-gluck.png" />
+                        </a>
+                    </div>
+                    <a href="http://www.gluck-gesamtausgabe.de/gwv/werkregister/eintrag/antigono.html#parts&502">
+                        <p class="x-small">Opera Antigono in the digital catalogue of Gluck's works</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="step">
+                <h2>What is the idea of IncipitSearch?</h2>
+            <div class="row">
+                <div class="seven columns">
+                <ul>
+                    <li>15 music projects at the Academy of Sciences and Literature | Mainz</li>
+                    <li>fundamental research, especially critical work editions</li>
+                    <li>possible application of incipit search functionality</li>
+                    <li>generic implementation</li>
+                    <li><strong>service that offers search functionality and aggregates available repositories</strong></li>
+                </ul>
+            </div>
+                <div class="five columns">
+                    <div class="mfp-lightbox">
+                        <a href="resources/img/adw-music-projects.png">
+                            <img src="resources/img/adw-music-projects.png" />
+                        </a>
+                    </div>
+                    <a href="http://www.adwmainz.de/projekte/musikwissenschaftliche-editionen.html">
+                        <p class="x-small">Fundamental research projects in musicology at the Academy of Sciences and Literature | Mainz </p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="step">
+            <h1 class="red">04</h1>
+            <h2 class="line-height-one-five">
+                Considerations: Repositories and Standards
+            </h2>
+        </div>
+
+        <div class="step">
+
+            <div class="eight columns">
+                <h2>Preliminary considerations</h2>
+                <ul>
+                    <li>What kind of music repositories can be integrated?</li>
+                    <li>Which content is openly available?</li>
+                    <li>What kind of annotations are used?</li>
+                    <li>Which overall standard to use in IncipitSearch?</li>
+                </ul>
+
+                   </div>
+        </div>
+
+         <div class="step">
+            <h2>Music Annotation</h2>
+            <p>Standards and formats for music</p>
+             <ul>
+                 <li><a href="http://music-encoding.org/">MEI</a></li>
+                 <li><a href="http://www.musicxml.com/">MusicXML</a></li>
+                 <li><a href="http://lilypond.org/index.de.html">LilyPond</a></li>
+             </ul>
+             <p>General standards</p>
+             <ul>
+                 <li>marcXML</li>
+                 <li>RDF</li>
+             </ul>
+            
+        </div>
+
+
+        <div class="step">
+              <div class="row">
+            <div class="eight columns">
+                <h2>Repositories</h2>
+                <p>Digital repositories:</p>
+                <ul>
+                    <li>Library catalogues</li>
+                    <li>Specific collections</li>
+                    <li>Digital editions</li>
+                </ul>
+                <p>Scans or analogue:</p>
+                <ul>
+                    <li>digitized music pieces</li>
+                    <li>printed catalogue raisonees</li>
+                    <li>Verlagskataloge</li>
+                </ul>
+            </div>
+
+            <div class="four columns">
+                    <div class="mfp-lightbox">
+                        <a href="resources/img/sbn-screen.png">
+                            <img src="resources/img/sbn-screen.png" />
+                        </a>
+                    </div>
+                    <a href="http://opac.sbn.it/bid/MSM0000014">
+                        <p class="x-small">Italian National Library</p>
+                    </a>
+                    <div class="mfp-lightbox">
+                        <a href="resources/img/breitkopf-screen.png">
+                            <img src="resources/img/breitkopf-screen.png" />
+                        </a>
+                    </div>
+                    <a href="http://www.mdz-nbn-resolving.de/urn/resolver.pl?urn=urn:nbn:de:bvb:12-bsb10624203-4">
+                        <p class="x-small">Breitkopf: Catalogo delle Sinfonie 1762</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="step">
+            <h1 class="red">03</h1>
+            <h2 class="line-height-one-five">
+                The webapplication IncipitSearch
+            </h2>
+        </div>
+
+        <div class="step">
+                <h2>Functionality of IncipitSearch</h2>
+                <h3 class="red pull-up">Demo</h3>
+                <div class="row">
+                <div class="eight columns">
+                    <a target="_blank" href="https://incipitsearch.adwmainz.net">
+                        <img src="resources/img/Screenshot_Website_IncipitSearch.png" />
+                    </a>
+                </div>
+            </div>
+            <p class="down-50">
+                Website: <a target="_blank"href="https://incipitsearch.adwmainz.net">https://incipitsearch.adwmainz.net</a>
+            </p>
+        </div>
+
+
+        <div class="step">
+            <h2>Software Architecture</h2>
+            <a href="resources/img/incipitsearch-architecture.png">
+             <img src="resources/img/incipitsearch-architecture.png" />
+            </a>
+        </div>
+
+        <div class="step">
+            <h2>IncipitSearch metadata format</h2>
+            <ul>
+                <li>preliminary thoughts and goals
+                    <ul>
+                        <li>low-threshold possibility to notate Incipits for new content</li>
+                        <li>applicable on different types of repositories</li>
+                        <li>addition to existing Markup or as standalone / first annotation</li>
+                    </ul>
+                </li>
+                <li class="substep">RDF!
+                    <ul>
+                        <li>interoperable through differenz serializations</li>
+                        <li>can be added to existing markup with JSON-LD, HTML Microdata and RDFa</li>
+                        <li>standalone notation (Turtle)</li>
+                    </ul>
+                </li></ul>
+        </div>
+
+        <div class="step">
+            <h2>schema.org</h2>
+            <h3 class="red pull-up">Vocabulary for semantic information</h3>
+                    <ul>
+                        <li>joined initiative of search engine providers</li>
+                        <li>simple vocabulary to implement semantic information on web pages
+                            for further processing by search engines</li>
+                        <li>central: MusicComposition</li>
+                        <li>own extension of vocabulary "MusicIncipit"</li>
+                    </ul>
+        </div>
+
+        <div class="step">
+            <h2>IncipitSearch metadata format</h2>
+            <a href="resources/img/schema-illustration.jpg"><img src="resources/img/schema-illustration.jpg" /></a>
+            <p class="small">Schema: Torsten Schrade</p>
+        </div>
+
+        <div class="step">
+            <h2>IncipitSearch metadata format</h2>
+            <h3 class="red pull-up">Example Breitkopf Katalog</h3>
+            <a href="resources/img/breitkopf-schema.png">
+                <img src="resources/img/breitkopf-schema.png" />
+            </a>
+        </div>
+
+
+        <div class="step">
+            <h1 class="red">04</h1>
+            <h2 class="line-height-one-five">
+                Outlook and Conclusion
+            </h2>
+        </div>
+
+        <div class="step">
+            <h2>
+                Where are we going with IncipitSearch
+            </h2>
+            <h3 class="red pull-up">Plans and desiderata</h3>
+            <ul>
+                <li>Optimisation of existing features, implementation of new functionality (exchange with community)
+                    <ul>
+                        <li>search interface</li>
+                        <li>search possibilities (rythm)</li>
+                        <li>result presentation and faceting</li>
+                    </ul>
+               </li>
+                <li class="substep">Growing platform
+                    <ul>
+                        <li>integration of further formats and repositories</li>
+                        <li>webfrom to integrate own catalogues</li>
+                    </ul>
+                </li>
+                <li class="substep">Authority data and LOD
+                    <ul>
+                        <li>Integration of authority data</li>
+                        <li>Provide all aggregated data for further reuse</li>
+                    </ul>
+                </li>
+                <li class="substep">
+                    stimulus for digitization of work catalogues and creation of own metadata</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h2>
+                Prespectives for (Digital) Musicology?
+            </h2>
+            <ul>
+                <li>connection between standalone repositories</li>
+                <li>intuitive music search</li>
+                <li>symplifying creation of additional metadata</li>
+                <li>promotion of LOD-Technologien in digital musicology</li>
+                <li>adding fields of discourse to digital musicology</li>
+            </ul>
+        </div>
+
+         <div class="step">
+            <h2>Try it and participate!</h2>
+             <p style="font-size:60px;">
+                 <a href="https://incipitsearch.adwmainz.net/">
+                     https://incipitsearch.adwmainz.net
+                 </a>
+             </p>
+             <div class="eight columns">
+                 <a target="_blank" href="https://incipitsearch.adwmainz.net">
+                     <img src="resources/img/Screenshot_Website_IncipitSearch.png" />
+                 </a>
+             </div>
+            </h2>
+        </div>
+
+    </div>
+
+    <!-- jquery -->
+    <script src="vendor/jquery/jquery-1.11.0.min.js"></script>
+
+    <!-- chartist -->
+    <script src="vendor/chartist/chartist.min-0.9.7.js"></script>
+    <script src="resources/js/chartist.charts.js"></script>
+
+    <!-- codemirror -->
+    <script src="vendor/codemirror/lib/codemirror.js"></script>
+    <script src="vendor/codemirror/addon/edit/matchbrackets.js"></script>
+    <script src="vendor/codemirror/mode/sparql/sparql.js"></script>
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("sparql"), {
+            mode: "application/sparql-query",
+            matchBrackets: true,
+            lineNumbers: true,
+            viewportMargin: Infinity
+        });
+    </script>
+
+    <!-- highlight -->
+    <script src="vendor/highlight/highlight.pack-9.3.0.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="resources/js/hljs.linenumbering.js"></script>
+
+    <!-- magnific popup -->
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min-1.1.0.js"></script>
+    <script src="resources/js/magnific-popup.lightbox.js"></script>
+
+    <!-- impress.mod.js -->
+    <script src="vendor/impress/impress.fork.js"></script>
+    <script src="vendor/impress/impress-slidenum.js"></script>
+    <script>
+        var obj = impress();
+        obj.init();
+        initSlideNo(obj);
+    </script>
+    <script>
+    (function(document, $, undefined) {
+	'use strict';
+
+	var isPlaying,
+		audio,
+		impressObj = impress(),
+		impressGoto = impressObj.goto;
+
+	$(document).on('impress:stepenter', function(event,f) {
+		var $currSlide = $(event.target);
+		if(audio) {
+			audio.pause();
+		}
+		audio = $currSlide.find('audio')[0];
+		if(audio) {
+			audio.play();
+			if(isPlaying && $currSlide[0] != $currSlide.parent().children().last()[0]) {
+				audio.addEventListener('ended',function() {
+					impressObj.goto($currSlide.next());
+					audio.removeEventListener('ended');
+				});
+			} else {
+				isPlaying = false;
+			}
+
+		}
+	});
+
+	impressObj.play = function() {
+		isPlaying = true;
+		this.goto(0);
+	};
+
+	impressObj.goto = function($el) {
+		if(isNaN($el)) {
+			impressGoto($el.parent().children().index($el), $el.data('transition-duration'));
+		} else {
+			impressGoto($el);
+		}
+	}
+
+
+})(document, jQuery);
+</script>
+
+</body>
+</html>
