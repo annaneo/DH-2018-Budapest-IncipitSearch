@@ -111,8 +111,8 @@
             <p>
             <ul class="substep">
                 <li>beginning or characteristical sequence of a music piece</li>
-                <li>multiple pieces with same title: incipit as identifier</li>
-                <li>used to catalogue music</li>
+                <li>incipit as identifier: multiple pieces with same title</li>
+                <li>used in cataloguing music</li>
                 <li>IAML: first three measures or first ten notes</li>
             </ul>
             <ul class="substep">
@@ -126,7 +126,7 @@
             <h2>Overview</h2>
             <ul class="line-height-one-five">
                 <li>
-                    Approach and webtool to search music using music incipits: IncipitSearch
+                    IncipitSearch: approach and webtool to search music using music incipits
                 </li>
                 <li>
                     Music Information Retrieval
@@ -157,24 +157,28 @@
             <ul>
                 <li>search in audio or in symbolic music notation</li>
             </ul>
+            <div class="substep">
             <p>
                 How to search?
+            </p>
             <ul>
                 <li>query by humming</li>
                 <li>acoustic fingerprinting</li>
                 <li>searching in notated music (string based)</li>
             </ul>
+        </div>
+            <div class="substep">
+            <p >Why searching music?
             </p>
-            <p>Why searching music?
             <ul>
                 <li>identifying music</li>
                 <li>recommender systems</li>
                 <li>grouping (style, mood, genre)</li>
                 <li>plagiarism detection</li>
             </ul>
-            </p>
             <p><strong>especially: music identification, adaption of motifs</strong></p>
 
+            </div>
         </div>
 
         <div class="step">
@@ -189,7 +193,7 @@
             <h3 class="red pull-up">Search in notated music</h3>
             <div>
                 <ul>
-                    <li>digital catalogue of Gluck's work</li>
+                    <li>digital catalogue of Gluck's works</li>
                     <li>incipits to illustrate adaptions of motifs</li>
                     <li>further searching possibilities</li>
                 </ul>
@@ -270,7 +274,7 @@
             <h2>Music Annotation</h2>
             <div class="row">
                 <div class="six columns">
-                    <p>Standards and formats for music (especially for western music)</p>
+                    <p>Standards and formats for music (especially western music)</p>
                     <ul>
                         <li><a href="http://music-encoding.org/">MEI</a></li>
                         <li><a href="http://www.musicxml.com/">MusicXML</a></li>
@@ -307,26 +311,17 @@
         </div>
 
         <div class="step">
-            <div class="row">
-                <div class="eight columns">
                     <h2>Repositories</h2>
                     <h3 class="red">Different types of repositories, different notation</h3>
+            <div class="row">
+                <div class="six columns">
                     <p>Digital repositories:</p>
                     <ul>
                         <li>Library catalogues</li>
                         <li>Specific collections</li>
                         <li>Digital editions</li>
                     </ul>
-                    <p>Scans or analogue:</p>
-                    <ul>
-                        <li>digitized music pieces</li>
-                        <li>analogue only catalogues</li>
-                    </ul>
-                </div>
-                <p class="substep">provide possibility to search over multiple catalogues</p>
-
-                <div class="four columns">
-                    <div class="mfp-lightbox">
+                    <div class="mfp-lightbox down-50" style="width:300px">
                         <a href="resources/img/sbn-screen.png">
                             <img src="resources/img/sbn-screen.png"/>
                         </a>
@@ -334,7 +329,16 @@
                     <a href="http://opac.sbn.it/bid/MSM0000014">
                         <p class="x-small">Italian National Library</p>
                     </a>
-                    <div class="mfp-lightbox">
+
+                </div>
+                <div class="six columns">
+                    <p>Scans or analogue:</p>
+                    <ul>
+                        <li>digitized music pieces</li>
+                        <li>analogue only catalogues</li>
+                    </ul>
+
+                    <div class="mfp-lightbox down-50" style="width:300px">
                         <a href="resources/img/breitkopf-screen.png">
                             <img src="resources/img/breitkopf-screen.png"/>
                         </a>
@@ -343,6 +347,9 @@
                         <p class="x-small">Breitkopf: Catalogo delle Sinfonie 1762</p>
                     </a>
                 </div>
+            </div>
+            <div class="row substep">
+                <p>=> provide possibility to search over multiple catalogues</p>
             </div>
         </div>
 
@@ -379,6 +386,15 @@
         </div>
 
         <div class="step">
+            <h2>Integration in other repositories</h2>
+            <div class="mfp-lightbox nine columns">
+                <a href="resources/img/gluck-incipitsearch.png">
+                    <img src="resources/img/gluck-incipitsearch.png"/>
+                </a>
+            </div>
+        </div>
+
+        <div class="step">
             <h2>IncipitSearch metadata format</h2>
             <ul>
                 <li>preliminary thoughts and goals
@@ -388,9 +404,9 @@
                         <li>applicable on different types of repositories</li>
                     </ul>
                 </li>
-                <li class="substep">RDF!
+                <li class="substep">RDF
                     <ul>
-                        <li>interoperable through different serializations</li>
+                        <li>flexible and interoperable through different serializations</li>
                         <li>can be added to existing markup with JSON-LD, HTML Microdata, RDFa</li>
                         <li>standalone notation (Turtle)</li>
                     </ul>
@@ -449,6 +465,7 @@
                 </li>
                 <li class="substep">Growing platform
                     <ul>
+                        <li>currently 950.000 incipits</li>
                         <li>integration of further formats and repositories</li>
                         <li>webfrom to integrate own catalogues</li>
                     </ul>
